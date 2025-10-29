@@ -1,4 +1,3 @@
-
 ai-interview-assessment/
 ├─ app/
 │  ├─ app.py                      # Entry Streamlit (UI)
@@ -69,7 +68,7 @@ ai-interview-assessment/
 ├─ .env.example                   # ENV (MODEL_SIZE, CUDA, API KEYS jika perlu)
 ├─ .gitignore
 └─ README.md
-```
+
 
 ## Isi ringkas file penting
 
