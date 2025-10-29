@@ -1,0 +1,14 @@
+streamlit
+moviepy
+ffmpeg-python
+yt-dlp
+requests
+whisper
+faster-whisper
+sentence-transformers
+langdetect
+pyyaml
+pandas
+numpy
+jiwer
+Sastrawi
