@@ -1,11 +1,4 @@
-# 🧠 AI Interview Assessment
-
-Proyek ini merupakan sistem **AI Interview Assessment** berbasis **Speech-to-Text (Whisper)** dan **Natural Language Understanding (Sentence-BERT)**.  
-Aplikasi dibangun menggunakan **Streamlit** sebagai UI untuk HR, dengan pipeline otomatis dari **video/audio → transkrip → skor performa & confidence**.
-
----
-
-## 📁 Struktur Folder
+##  Struktur Folder
 
 ```bash
 ai-interview-assessment/
@@ -101,38 +94,9 @@ numpy
 jiwer
 Sastrawi
 ```
-
-### `config.yaml`
-Konfigurasi utama untuk model, path, dan bobot penilaian:
-```yaml
-app:
-  title: "AI Interview Assessment"
-  max_upload_mb: 200
-paths:
-  tmp_videos: "tmp/videos"
-  tmp_audio: "tmp/audio"
-  tmp_transcripts: "tmp/transcripts"
-models:
-  whisper_backend: "whisper"          # whisper | faster-whisper
-  whisper_size: "base"                # tiny/base/small/medium
-  sbert_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-  langdetect: "fasttext"              # fasttext | langdetect | whisper
-scoring:
-  pass_threshold: 0.70
-  weights:
-    similarity: 0.55
-    keyword_must: 0.30
-    keyword_nice: 0.10
-    structure: 0.05
-confidence:
-  asr_weight: 0.7
-  lang_weight: 0.3
-  min_len_tokens: 120
-```
-
 ---
 
-## 🚀 Cara Menjalankan
+##  Cara Menjalankan
 
 ```bash
 # 1. Buat virtual environment
@@ -148,7 +112,7 @@ streamlit run app/app.py
 
 ---
 
-## 🧩 Deskripsi Singkat Modul Utama
+##  Deskripsi Modul
 
 | Folder | Fungsi |
 |--------|---------|
@@ -163,7 +127,7 @@ streamlit run app/app.py
 
 ---
 
-> ✨ **Catatan tambahan:**
+>  **Catatan tambahan:**
 > - Target akurasi *Speech-to-Text (STT)* minimal **≥ 90%** (berdasarkan Word Error Rate).  
 > - Pipeline lengkap: **Video → Audio → Transkrip → Analisis → JSON HR-friendly**.  
 > - Folder `data/samples/` digunakan untuk contoh video dan dataset pengujian.
