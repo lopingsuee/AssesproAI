@@ -1,4 +1,13 @@
-# AssesproAI
+# 🧠 AI Interview Assessment
+
+Proyek ini merupakan sistem **AI Interview Assessment** berbasis **Speech-to-Text (Whisper)** dan **Natural Language Understanding (Sentence-BERT)**.  
+Aplikasi dibangun menggunakan **Streamlit** sebagai UI untuk HR, dengan pipeline otomatis dari **video/audio → transkrip → skor performa & confidence**.
+
+---
+
+## 📁 Struktur Folder
+
+```bash
 ai-interview-assessment/
 ├─ app/
 │  ├─ app.py                      # Entry Streamlit (UI)
@@ -69,3 +78,92 @@ ai-interview-assessment/
 ├─ .env.example                   # ENV (MODEL_SIZE, CUDA, API KEYS jika perlu)
 ├─ .gitignore
 └─ README.md
+```
+
+---
+
+## ⚙️ File Penting
+
+### `requirements.txt`
+```bash
+streamlit
+moviepy
+ffmpeg-python
+yt-dlp
+requests
+whisper
+faster-whisper
+sentence-transformers
+langdetect
+pyyaml
+pandas
+numpy
+jiwer
+Sastrawi
+```
+
+### `config.yaml`
+Konfigurasi utama untuk model, path, dan bobot penilaian:
+```yaml
+app:
+  title: "AI Interview Assessment"
+  max_upload_mb: 200
+paths:
+  tmp_videos: "tmp/videos"
+  tmp_audio: "tmp/audio"
+  tmp_transcripts: "tmp/transcripts"
+models:
+  whisper_backend: "whisper"          # whisper | faster-whisper
+  whisper_size: "base"                # tiny/base/small/medium
+  sbert_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  langdetect: "fasttext"              # fasttext | langdetect | whisper
+scoring:
+  pass_threshold: 0.70
+  weights:
+    similarity: 0.55
+    keyword_must: 0.30
+    keyword_nice: 0.10
+    structure: 0.05
+confidence:
+  asr_weight: 0.7
+  lang_weight: 0.3
+  min_len_tokens: 120
+```
+
+---
+
+## 🚀 Cara Menjalankan
+
+```bash
+# 1. Buat virtual environment
+python -m venv .venv
+source .venv/bin/activate     # (Windows: .venv\Scripts\activate)
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Jalankan aplikasi Streamlit
+streamlit run app/app.py
+```
+
+---
+
+## 🧩 Deskripsi Singkat Modul Utama
+
+| Folder | Fungsi |
+|--------|---------|
+| `app/` | Antarmuka Streamlit (UI HR) |
+| `core/` | Logika utama: STT, NLP, scoring |
+| `data/` | Bank pertanyaan & kamus teks |
+| `evaluation/` | Pengujian akurasi STT (WER/CER) |
+| `experiments/` | Eksperimen & notebook riset |
+| `tmp/` | Artefak runtime (video/audio/temp) |
+| `tests/` | Unit test modular |
+| `models/` | Cache model SBERT / FastText |
+
+---
+
+> ✨ **Catatan tambahan:**
+> - Target akurasi *Speech-to-Text (STT)* minimal **≥ 90%** (berdasarkan Word Error Rate).  
+> - Pipeline lengkap: **Video → Audio → Transkrip → Analisis → JSON HR-friendly**.  
+> - Folder `data/samples/` digunakan untuk contoh video dan dataset pengujian.
