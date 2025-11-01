@@ -75,7 +75,7 @@ ai-interview-assessment/
 
 ---
 
-## ⚙️ File Penting
+## File Penting
 
 ### `requirements.txt`
 ```bash
