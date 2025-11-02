@@ -6,4 +6,3 @@ logs/
 tmp/
 models/
 evaluation/wer_results.csv
-.gitkeep
