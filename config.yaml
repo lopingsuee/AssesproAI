@@ -1,0 +1,28 @@
+app:
+  title: "AI Interview Assessment"
+  max_upload_mb: 200
+
+paths:
+  tmp_videos: "tmp/videos"
+  tmp_audio: "tmp/audio"
+  tmp_transcripts: "tmp/transcripts"
+
+models:
+  whisper_backend: "whisper"       # whisper | faster-whisper
+  whisper_size: "base"
+  sbert_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  langdetect: "en"
+
+scoring:
+  pass_threshold: 0.70
+  weights:
+    similarity: 0.55
+    keyword_must: 0.30
+    keyword_nice: 0.10
+    structure: 0.05
+
+confidence:
+  asr_weight: 0.7
+  min_len_tokens: 120
+
+wer_target_accuracy: 0.90

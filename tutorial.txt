@@ -407,3 +407,10 @@ streamlit run app/app.py
 ---
 
 Kalau kamu mau, aku bisa menyiapkan **arsip proyek awal (folder & file kosong + skeleton di atas)** supaya kamu tinggal isi logic-nya. Mau pakai **Whisper open-source** atau **faster-whisper** sebagai default backend?
+
+core/ → kode logic (engine & model)
+app/ → antarmuka (UI Streamlit)
+data/ → file konfigurasi & contoh ringan
+evaluation/ → dataset kecil untuk validasi WER
+tmp/ → hasil runtime sementara (download, transkrip)
+models/ → model cache otomatis (SBERT, Whisper, FastText)

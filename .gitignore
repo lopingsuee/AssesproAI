@@ -6,3 +6,4 @@ logs/
 tmp/
 models/
 evaluation/wer_results.csv
+data/samples/

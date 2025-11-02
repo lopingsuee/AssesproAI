@@ -1,0 +1,47 @@
+- qid: pertanyaan 1
+  question_text:
+    en: "How would you build an image classification model using convolutional neural networks (CNNs)?"
+  languages_supported: ["en"]
+  answers:
+    en:
+      ideal: >
+        To build an image classification model, I would use a convolutional neural network (CNN).
+        I prepare the dataset, define the architecture with convolutional, ReLU, and pooling layers,
+        then add dense and softmax layers for classification. The model is trained using Adam optimizer
+        and categorical cross-entropy loss. I would apply data augmentation and possibly fine-tune
+        using pre-trained models like ResNet or MobileNet for higher accuracy.
+      keywords:
+        must: ["dataset","convolutional","relu","pooling","softmax","optimizer","augmentation","transfer learning"]
+        nice: ["resnet","mobilenet","accuracy"]
+  weights:
+    similarity: 0.55
+    keyword_must: 0.30
+    keyword_nice: 0.10
+    structure: 0.05
+  pass_threshold: 0.70
+
+- qid: pertanyaan 2
+  question_text:
+    en: "Can you explain how you build and train a neural network model in TensorFlow?"
+  languages_supported: ["en"]
+  answers:
+    en:
+      ideal: >
+        When building and training a neural network model in TensorFlow, I start by importing TensorFlow and Keras.
+        Then, I define the architecture using either the Sequential API or Functional API depending on the model complexity.
+        The model may include several Dense or Conv2D layers, activation functions like ReLU, and a Softmax layer for classification.
+        After defining the architecture, I compile the model using an optimizer such as Adam, a loss function
+        like categorical cross-entropy for classification, and metrics such as accuracy.
+        I prepare the dataset by normalizing and splitting it into training and validation sets.
+        I train the model with model.fit() for several epochs while monitoring performance.
+        Callbacks like EarlyStopping and ModelCheckpoint help prevent overfitting and save the best weights.
+        Finally, I evaluate the model on test data and can convert it to TensorFlow Lite for deployment.
+      keywords:
+        must: ["tensorflow", "keras", "sequential", "dense", "relu", "softmax", "optimizer", "adam", "loss", "accuracy", "fit", "earlystopping"]
+        nice: ["functional api", "modelcheckpoint", "categorical cross-entropy", "normalization", "validation", "deployment", "tensorflow lite"]
+  weights:
+    similarity: 0.55
+    keyword_must: 0.30
+    keyword_nice: 0.10
+    structure: 0.05
+  pass_threshold: 0.70
