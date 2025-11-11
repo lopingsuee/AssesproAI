@@ -99,14 +99,11 @@ Sastrawi
 ##  Cara Menjalankan
 
 ```bash
-# 1. Buat virtual environment
-python -m venv .venv
-source .venv/bin/activate     # (Windows: .venv\Scripts\activate)
 
-# 2. Install dependencies
+# 1. Install dependencies
 pip install -r requirements.txt
 
-# 3. Jalankan aplikasi Streamlit
+# 2. Jalankan aplikasi Streamlit
 streamlit run app/app.py
 ```
 
