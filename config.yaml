@@ -12,10 +12,12 @@ paths:
   models_cache: models
 
 models:
-  whisper_backend: "whisper"         
-  whisper_size: "medium"
-  llm_backend: "groq"                
-  llm_model: "llama-3.1-8b-instant"  
+
+  whisper_backend: "whisper"                 # whisper | faster-whisper
+  whisper_size: "base"
+  sbert_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  langdetect: "en"
+
 
 whisper:
   language: "en"
