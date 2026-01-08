@@ -1,7 +1,3 @@
-Berikut **README baru** yang sudah disesuaikan dengan arsitektur TERBARU project kamu (full LLM evaluator, pipeline Whisper sederhana, storage kandidat, dan HR Dashboard). Struktur dan penjelasan dibuat **rapih, profesional, dan ringkas**, sesuai standar project production.
-
----
-
 # **Assespro AI — Automated Interview Assessment (LLM + Whisper)**
 
 Sistem penilaian interview berbasis video menggunakan:
